@@ -194,19 +194,19 @@
 					"_isAdaptModel": {
 						"type": "boolean",
 						"default": false,
-						"title": "Es un modelo de Adapt",
+						"title": "Mostrar el contenido de un componente del recurso",
 						"inputType": "Checkbox",
 						"validators": [],
-						"help": "¿Enlace del modelo Adapt?"
+						"help": "Si se habilita, mostrará el contenido del componente deseado en una ventana emergente"
 					},
 					"_adaptModelId": {
 						"type": "string",
 						"required": false,
 						"default": "",
-						"title": "Id del modelo Adapt",
+						"title": "Id del componente",
 						"inputType": "Text",
 						"validators": [],
-						"help": "Id del modelo Adapt"
+						"help": "Id del componente a mostrar"
 					},
 					"_classes": {
 						"type": "string",

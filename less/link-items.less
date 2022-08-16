@@ -1,12 +1,49 @@
 .linkitems {
+  &__widget {
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
   &__item > div {
     pointer-events: none;
   }
+
   &__widget.has-columns {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: stretch;
+  }
+
+  &__item {
+    text-decoration: none;
+    color: #4D4D4D;
+
+    &:hover &-title {
+      background-color: darken(#005883, 10%);
+    }
+
+    &__image {
+      min-width: inherit;
+      max-width: 300px;
+      margin: 0 auto;
+    }
+    &-title {
+      min-width: inherit;
+      max-width: 300px;
+      margin: 0 auto;
+      border-width: 1px;
+      border-style: solid;
+      font-size: 1.07rem;
+      text-align: center;
+      transition: .3s ease all;
+      font-weight: bold;
+      background-color: #005883;
+      color: #fff;
+      border-color: #005883;
+      border-radius: 0;
+      padding: 0.5rem 1rem;
+    }
   }
 
   &__widget.has-columns &__item {

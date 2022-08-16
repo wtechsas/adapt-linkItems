@@ -2,16 +2,16 @@
     "name": "adapt-linkItems",
     "repository": {
         "type": "git",
-        "url": "git://github.com/nachocinalli/adapt-linkItems.git"
+        "url": "git://github.com/wtechsas/adapt-linkItems.git"
     },
     "framework": ">=5.14.0",
     "version": "10.0.1",
-    "homepage": "https://github.com/nachocinalli/adapt-linkItems",
-    "issues": "https://github.com/nachocinalli/adapt-linkItems/issues",
+    "homepage": "https://github.com/wtechsas/adapt-linkItems",
+    "issues": "https://github.com/wtechsas/adapt-linkItems/issues",
     "component": "linkItems",
     "description": "Un componente que proporciona un botón de enlace hacia un recurso web",
     "main": "/js/adapt-linkItems.js",
-    "displayName": "Boton de enlace",
+    "displayName": "Botón de enlace",
     "keywords": [
         "adapt-plugin",
         "adapt-component"
