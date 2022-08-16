@@ -1,0 +1,224 @@
+{
+	"type": "object",
+	"$schema": "http://json-schema.org/draft-04/schema",
+	"id": "http://jsonschema.net",
+	"$ref": "http://localhost/plugins/content/component/model.schema",
+	"globals": {
+		"ariaRegion": {
+			"type": "string",
+			"required": true,
+			"legend": "Región Aria",
+			"default": "Botón de enlace",
+			"inputType": "Text",
+			"validators": [],
+			"translatable": true
+		}
+	},
+	"properties": {
+		"_supportedLayout": {
+			"type": "string",
+			"required": true,
+			"enum": [
+				"full-width",
+				"half-width",
+				"both"
+			],
+			"default": "half-width",
+			"editorOnly": true
+		},
+		"instruction": {
+			"type": "string",
+			"required": false,
+			"default": "",
+			"inputType": "Text",
+			"validators": [],
+			"title": "Instrucciones",
+			"help": "Instrucciones que se muestran para este componente.",
+			"translatable": true
+		},
+		"_setCompletionOn": {
+			"type": "string",
+			"required": false,
+			"default": "allItems",
+			"title": "Establecer finalización en:",
+			"enum": [
+				{"val": "inview", "label": "en vista"},
+				{"val": "allItems", "label": "todos los elementos"}
+			],
+			"inputType": {
+				"type": "Select",
+				"options": [
+					{"val": "inview", "label": "en vista"},
+					{"val": "allItems", "label": "todos los elementos"}
+				]
+			},
+			"validators": [],
+			"help": "Si la finalización se basa en que el estudiante haya visto todos los elementos, o simplemente haya visto el componente."
+		},
+		"_animateItems": {
+			"type": "boolean",
+			"required": false,
+			"title": "Animar elementos",
+			"inputType": "Checkbox",
+			"validators": [],
+			"help": "Animar los elementos a la vista.",
+			"translatable": false
+		},
+
+		"_percentInviewVertical": {
+			"type": "number",
+			"required": false,
+			"default": 20,
+			"isSetting": true,
+			"title": "Porcentaje a la vista",
+			"inputType": "Number",
+			"validators": [
+				"number"
+			],
+			"help": "Controla qué porcentaje de la altura de los elementos debe estar en la ventana gráfica para que los elementos se animen."
+		},
+		"_transitionSpeed": {
+			"type": "number",
+			"required": false,
+			"default": 200,
+			"isSetting": true,
+			"title": "Velocidad de transición",
+			"inputType": "Number",
+			"validators": [
+				"number"
+			],
+			"help": "Especifica la velocidad en que las animaciones actuan en el componente."
+		},
+		"_columns": {
+			"type": "number",
+			"required": false,
+			"default": 0,
+			"title": "Columnas",
+			"inputType": "Number",
+			"validators": ["number"],
+			"help": "Establecer el número de columnas. Si el valor es '0', el componente usa el diseño predeterminado."
+		},
+		"_items": {
+			"type": "array",
+			"required": true,
+			"title": "Enlaces",
+			"items": {
+				"type": "object",
+				"required": true,
+				"properties": {
+					"title": {
+						"type": "string",
+						"required": false,
+						"inputType": "Text",
+						"title": "Título del enlace",
+						"default": "",
+						"validators": [],
+						"help": "Este es el título del enlace",
+						"translatable": true
+					},
+					"body": {
+						"type": "string",
+						"required": false,
+						"inputType": "TextArea",
+						"title": "Contenido del enlace",
+						"default": "",
+						"validators": [],
+						"help": "Este es el contenido del enlace",
+						"translatable": true
+					},
+					"_graphic": {
+						"type": "object",
+						"required": false,
+						"title": "Imagen",
+						"properties": {
+							"src": {
+								"type": "string",
+								"required": false,
+								"default": "",
+								"inputType": "Asset:image",
+								"validators": [],
+								"help": "Imagen que se renderizará con el enlace."
+							},
+							"alt": {
+								"type": "string",
+								"required": false,
+								"default": "",
+								"title": "Texto alternativo",
+								"inputType": "Text",
+								"validators": [],
+								"help": "Una descripción de la imagen",
+								"translatable": true
+							}
+						}
+					},
+					"_link": {
+						"type": "string",
+						"required": true,
+						"title": "Enlace",
+						"inputType": "Asset",
+						"validators": ["required"]
+					},
+					"filename": {
+						"type": "string",
+						"required": false,
+						"title": "Nombre del archivo",
+						"inputType": "Text",
+						"translatable": true,
+						"help": "Se utiliza para establecer el nombre del archivo descargado"
+					},
+					"_forceDownload": {
+						"type": "boolean",
+						"default": false,
+						"title": "Forzar descarga",
+						"inputType": "Checkbox",
+						"validators": [],
+						"help": "Obliga a descargar el enlace en lugar de abrirlo en el navegador."
+					},
+					"_isResourceItem": {
+						"type": "boolean",
+						"default": false,
+						"title": "Es parte de los recursos",
+						"inputType": "Checkbox",
+						"validators": [],
+						"help": "¿Este enlace es parte de los recursos?"
+					},
+					"_resourceItemIndex": {
+						"type": "number",
+						"required": true,
+						"default": 0,
+						"title": "Índice (Tab Index) del enlace en el recurso digital",
+						"inputType": "Number",
+						"validators": ["required", "number"],
+						"help": "Específica el orden en que se va a leer con una herramienta de accesibilidad"
+					},
+					"_isAdaptModel": {
+						"type": "boolean",
+						"default": false,
+						"title": "Es un modelo de Adapt",
+						"inputType": "Checkbox",
+						"validators": [],
+						"help": "¿Enlace del modelo Adapt?"
+					},
+					"_adaptModelId": {
+						"type": "string",
+						"required": false,
+						"default": "",
+						"title": "Id del modelo Adapt",
+						"inputType": "Text",
+						"validators": [],
+						"help": "Id del modelo Adapt"
+					},
+					"_classes": {
+						"type": "string",
+						"required": false,
+						"default": "",
+						"title": "Clases",
+						"inputType": "Text",
+						"validators": [],
+						"help": "Clases HTML que se aplican al enlace"
+					}
+				}
+			}
+		}
+	}
+}
